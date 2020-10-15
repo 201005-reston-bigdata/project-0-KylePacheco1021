@@ -1,4 +1,4 @@
-package cli
+/*package cli
 
 import java.io.FileNotFoundException
 
@@ -56,4 +56,4 @@ class CLI {
   }
 
 
-}
+}*/

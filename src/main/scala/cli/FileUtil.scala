@@ -3,18 +3,24 @@ package cli
 import scala.io.{BufferedSource, Source}
 import java.io.{File, FileWriter}
 
+import scala.collection.mutable.ArrayBuffer
+
 object FileUtil {
 
-  def getTextContent(filename: String): Option[String] = {
+  def getTextContent(filename: String): ArrayBuffer[Array[String]] = {
     //Using Source.fromFile to open files
 
     var openedFile: BufferedSource = null
 
     try {
       openedFile = Source.fromFile(filename)
-      Some(openedFile.getLines().mkString(" "))
-    }finally {
-      if(openedFile!=null)
+      var array = new ArrayBuffer[Array[String]]
+      for (line <- openedFile.getLines) {
+        array.addOne(line.split(",").map(_.trim))
+      }
+      array
+    } finally {
+      if (openedFile != null)
         openedFile.close
     }
   }

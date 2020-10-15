@@ -18,9 +18,9 @@ class CLI {
   }
 
   def printOptions():Unit = {
-    println("file [filename]: wordcount the contents of a file")
-    println("exit: close WCCLI")
-    println("please enter an option")
+    println("CSV [filename]: Uploads .CSV file to bird database")
+    println("exit: Close CLI")
+    println("Please enter an option")
   }
 
   /** Runs the menu prompting + listening for user input */

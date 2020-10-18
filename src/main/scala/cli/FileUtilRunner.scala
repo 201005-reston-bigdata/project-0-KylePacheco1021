@@ -1,6 +1,10 @@
 package cli
 
+import spray.json._
+import birds.Bird
+import spray.json.DefaultJsonProtocol._
+
 object FileUtilRunner extends App {
 
-  FileUtil.getTextContent("test.csv").foreach(_.foreach(println(_)))
+  FileUtil.getJSONString("test.json").toJson.convertTo[Bird]
 }

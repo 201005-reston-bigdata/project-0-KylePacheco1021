@@ -6,4 +6,5 @@ scalaVersion := "2.13.3"
 
 libraryDependencies += "org.mongodb.scala" %% "mongo-scala-driver" % "2.9.0"
 //libraryDependencies += "com.typesafe.play" %% "play-json" % "2.8.x"
-libraryDependencies += "io.spray" %%  "spray-json" % "1.3.5"
+//libraryDependencies += "io.spray" %%  "spray-json" % "1.3.5"
+libraryDependencies += "net.liftweb" %% "lift-json" % "3.4.2"

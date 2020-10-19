@@ -1,20 +1,24 @@
 [
   {
-    "bandId" : "OEB2595",
-    "name" : "Popcorn",
-    "sex" : "Male",
-    "species" : "Cockatiel",
-    "breed" : "Lutino",
-    "hatchYear" : 2019,
-    "medication" : null
+    "bandId": "OEB2595",
+    "name": "Popcorn",
+    "sex": "Male",
+    "species": "Cockatiel",
+    "breed": "Lutino",
+    "hatchYear": 2019,
+    "medication": null
   },
   {
-    "bandId" : null,
-    "name" : "JoJo",
-    "sex" : "Male",
-    "species" : "Conure",
-    "breed" : "Dusky Headed",
-    "hatchYear" : 2000,
-    "medication" : ["Flucanozole", "Vibramycin", "Metaclopromide"]
+    "bandId": null
+    "name": "JoJo",
+    "sex": "Male",
+    "species": "Conure",
+    "breed": "Dusky Headed",
+    "hatchYear": 2000,
+    "medication": [
+      "Flucanozole",
+      "Vibramycin",
+      "Metaclopromide"
+    ]
   }
 ]

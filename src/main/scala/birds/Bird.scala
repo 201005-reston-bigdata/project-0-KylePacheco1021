@@ -1,8 +1,6 @@
 package birds
 
 import org.bson.types.ObjectId
-import spray.json.DefaultJsonProtocol._
-import spray.json._
 
 import scala.collection.mutable.ArrayBuffer
 
@@ -16,8 +14,7 @@ object Bird {
             breed: String, hatchYear: Option[Int], medication: Option[List[String]])
   : Bird = Bird(new ObjectId(), bandId, name, sex, species, breed, hatchYear,
     medication)
-
-  implicit object BirdFormat extends RootJsonFormat[Bird] {
+  /*implicit object BirdFormat extends RootJsonFormat[Bird] {
     def write(bird: Bird): JsValue = {
       JsObject(
         "bandId" -> bird.bandId.toJson,
@@ -43,7 +40,7 @@ object Bird {
 
 
     }
-  }
+  }*/
 }
 
 

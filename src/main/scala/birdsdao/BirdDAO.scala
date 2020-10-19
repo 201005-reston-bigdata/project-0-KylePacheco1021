@@ -34,8 +34,6 @@ class BirdDAO(mongoClient: MongoClient) {
   def addBird(bird: Bird): Boolean = {
     try {
       getResults(collection.insertOne(bird))
-      //getResults(collection.insertOne(Bird(bird._id, bird.bandId, bird.name, bird.sex,
-      //  bird.species, bird.breed, bird.hatchYear, bird.medication)))
       true
     } catch {
       case e: Exception => {

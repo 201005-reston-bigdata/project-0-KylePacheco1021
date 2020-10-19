@@ -9,16 +9,25 @@
     "medication": null
   },
   {
-    "bandId": null
+    "bandId": null,
     "name": "JoJo",
     "sex": "Male",
     "species": "Conure",
-    "breed": "Dusky Headed",
-    "hatchYear": 2000,
+    "breed": "Dusky headed",
+    "hatchYear": null,
     "medication": [
       "Flucanozole",
       "Vibramycin",
       "Metaclopromide"
     ]
+  },
+  {
+    "bandId": "OEB1234",
+    "name": "Baby",
+    "sex": "Female",
+    "species": "Cockatiel",
+    "breed": "White face cinnamon",
+    "hatchYear": 2018,
+    "medication": null
   }
 ]

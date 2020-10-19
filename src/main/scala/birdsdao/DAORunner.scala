@@ -11,24 +11,25 @@ object DAORunner extends App {
 
   birdDAO.deleteDatabase()
 
-  /*val birdList = getBirdsFromJSON("test.json")
+  val birdList = getBirdsFromJSON("test.json")
   for(i<-0 until birdList.length) {
     birdDAO.addBird(birdList(i))
-  }*/
+  }
   //birdDAO.deleteByName("Popcorn")
-  val popcorn: Bird = Bird(Some("OEB2595"), "Popcorn", "Male", "Cockatiel", "Lutino",
+  /*val popcorn: Bird = Bird(Some("OEB2595"), "Popcorn", "Male", "Cockatiel", "Lutino",
     Some(2019), None)
   val jojo: Bird = Bird(None, "JoJo", "Male", "Conure", "Duskey Headed", Some
   (2000),
     Some(List("Vibramycin", "Flucanozole", "Metaclopromide")))
 
   println(birdDAO.addBird(popcorn))
-  println(birdDAO.getByName("Popcorn"))
+  println(birdDAO.getByName("Popcorn"))*/
+  println("Getting bird by band ID")
   println(birdDAO.getByBandId("OEB2595"))
 
-  println(birdDAO.addBird(jojo))
+  /*println(birdDAO.addBird(jojo))
   println(birdDAO.getByName("JoJo"))
-  //birdDAO.deleteByName("Popcorn")
+  //birdDAO.deleteByName("Popcorn")*/
 
   client.close()
 }

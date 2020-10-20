@@ -1,4 +1,4 @@
-/*package cli
+package cli
 
 import java.io.FileNotFoundException
 
@@ -18,11 +18,16 @@ class CLI {
   }
 
   def printOptions():Unit = {
-    println("CSV [filename]: Uploads .CSV file to bird database")
-    println("exit: Close CLI")
+    println("JSON [filename]: Uploads .JSON file to bird database")
+    println("Bird [birdName]: Gets information on bird by name")
+    println("BandID [bandId]: Gets information on bird by bandId")
+    println("RemoveBird [birdName]: Removes bird from database by name")
+    println("RemoveBandId [bandId]: Removes bird from database by bandId")
+    println("Drop: Clears entire database")
+    println("Exit: Close CLI")
     println("Please enter an option")
   }
-
+/*
   /** Runs the menu prompting + listening for user input */
   def menu():Unit = {
     printWelcome()
@@ -53,7 +58,7 @@ class CLI {
         case notRecognized => println(s"$notRecognized is not a recognized command.")
       }
     }
-  }
+  }*/
 
 
-}*/
+}

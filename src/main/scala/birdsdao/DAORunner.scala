@@ -1,4 +1,4 @@
-package birdsdao
+/*package birdsdao
 
 import birds.Bird
 import org.mongodb.scala.MongoClient
@@ -11,11 +11,12 @@ object DAORunner extends App {
 
   birdDAO.deleteDatabase()
 
-  val birdList = getBirdsFromJSON("test.json")
-  for(i<-0 until birdList.length) {
-    birdDAO.addBird(birdList(i))
-  }
-  //birdDAO.deleteByName("Popcorn")
+  val popcorn: Bird = Bird(Some("OEB2595"), "Popcorn", "Male", "Cockatiel", "Lutino",
+    Some(2019), None)
+  birdDAO.addBird(popcorn)
+  println(birdDAO.getByName("Popcorn"))
+  println(birdDAO.deleteByName("Popcorn"))
+
   /*val popcorn: Bird = Bird(Some("OEB2595"), "Popcorn", "Male", "Cockatiel", "Lutino",
     Some(2019), None)
   val jojo: Bird = Bird(None, "JoJo", "Male", "Conure", "Duskey Headed", Some
@@ -32,4 +33,4 @@ object DAORunner extends App {
   //birdDAO.deleteByName("Popcorn")*/
 
   client.close()
-}
+}*/

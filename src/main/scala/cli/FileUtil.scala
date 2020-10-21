@@ -38,32 +38,10 @@ object FileUtil {
       if(elem.values==null)
         bandIdArray.append(None)
       else {
-        println(compactRender(elem))
         bandIdArray.append(Some(elem.values.asInstanceOf[String]))
       }
     }
     val properBandIdList = bandIdArray.toList
-    println(properBandIdList)
-
-    /*val bandIdList = for {
-      JObject(bird) <- json
-      JField("bandId", bandId) <- bird
-    } yield {
-      bandId match {
-        case id => Some(compactRender(id))
-        //case JNull => None
-        case _ => None
-      }
-    }
-
-    for(elt<-bandIdList) {
-      println(elt)
-      if(elt == Some(null))
-        bandIdArray.append(None)
-      else
-        bandIdArray.append(elt)
-    }
-    val properBandIdList = bandIdArray.toList*/
 
     /** Gets list of names */
     val nameList = for {
@@ -99,26 +77,6 @@ object FileUtil {
         hatchYearArray.append(Some(compactRender(elem).toInt))
     }
     val properHatchYearList = hatchYearArray.toList
-    println(properHatchYearList)
-    /*val hatchYearList = for {
-      JObject(bird) <- json
-      JField("hatchYear", hatchYear) <- bird
-    } yield {
-      hatchYear match {
-        case JNull => None
-        case year => Some(compactRender(year).toInt)
-        case _ => None
-      }
-    }
-    for(elt<-hatchYearList) {
-      println(elt)
-      if(elt == Some(null))
-        hatchYearArray.append(elt.flatMap(Option(_)))
-      else
-        hatchYearArray.append(elt)
-    }
-    val properHatchYearList = hatchYearArray.toList*/
-
 
     /** Gets list of medications */
     val medsList = (json \ "medication").children

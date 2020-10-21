@@ -19,6 +19,8 @@ class CLI {
   }
 
   def printOptions(): Unit = {
+    println("-----------------------------------------------------------------------------")
+    println(s"Please enter an option: \n")
     println("JSON: Uploads .JSON file to bird database")
     println("AllBirds: Retrieves all birds from database")
     println("AddBird: Prompts user to fill out fields about bird to be entered into " +
@@ -29,7 +31,7 @@ class CLI {
     println("RemoveBandId: Removes bird from database by bandId")
     println("Drop: Clears entire database")
     println("Exit: Leave program")
-    println(s"Please enter an option. \n")
+    println("-----------------------------------------------------------------------------")
   }
 
   /** Runs the menu prompting + listening for user input */
@@ -94,6 +96,7 @@ class CLI {
       else
         println(s"Could not find bird with bandID $bandId.\n")
     }else if(input.equalsIgnoreCase("exit")) {
+      println("Goodbye")
       continueMenuLoop=false
     } else if(input.equalsIgnoreCase("drop")) {
       birdDAO.deleteDatabase()

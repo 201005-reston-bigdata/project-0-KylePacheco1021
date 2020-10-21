@@ -13,6 +13,7 @@ class CLI {
   val client = MongoClient()
   val birdDAO = new BirdDAO(client)
   var continueMenuLoop = true
+  var deleteDB = false
 
   def printWelcome(): Unit = {
     println("Welcome to BirdsDB")
@@ -29,7 +30,12 @@ class CLI {
     println("BandID: Gets information on bird by bandId")
     println("RemoveBird: Removes bird from database by name")
     println("RemoveBandId: Removes bird from database by bandId")
-    println("Drop: Clears entire database")
+    if(!deleteDB) {
+      println("Drop: Clears entire database")
+    }
+    if(deleteDB) {
+      println("Undo: Undoes drop")
+    }
     println("Exit: Leave program")
     println("-----------------------------------------------------------------------------")
   }
@@ -98,8 +104,14 @@ class CLI {
     }else if(input.equalsIgnoreCase("exit")) {
       println("Goodbye")
       continueMenuLoop=false
+      if(deleteDB)
+        birdDAO.deleteDatabase()
     } else if(input.equalsIgnoreCase("drop")) {
-      birdDAO.deleteDatabase()
+      println("Database will be deleted upon exiting program.\n")
+      deleteDB = true
+    } else if(input.equalsIgnoreCase("undo")) {
+      println("Database will no longer be deleted.\n")
+      deleteDB = false
     } else
       println("Command not recognized.\n")
   }
